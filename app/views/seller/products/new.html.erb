@@ -1,2 +1,21 @@
 <h1>新規作品登録</h1>
-  <%= form_with model: @product do |f| %>
+  <%= form_with model: @product, url: '/seller/products' do |f| %>
+   
+   <div>画像</div>
+    <%= f.file_field :image, accept: "image/*" %>
+   <div>カテゴリー</div>
+    <%#= f.collection_select :category_id, Category.all, :id, :name %>
+   <div>作品名</div>
+    <%= f.text_field :name, placeholder:"商品名" %>
+   <div>作品の説明</div>
+    <%= f.text_area :description, placeholder:"ここに説明文を記述します" %>
+   <div>販売価格（税抜）</div>
+    ￥<%= f.text_field :price, placeholder:"1000" %>
+   <div>配送料</div>
+    <%= f.text_field :shipping_cost %>
+   <div>販売ステータス</div>
+  
+  <%= f.submit '新規登録', class: "btn btn-warning" %>
+  
+  <% end %>
+  

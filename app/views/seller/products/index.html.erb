@@ -1,2 +1,15 @@
-<h1>Seller::Products#index</h1>
-<p>Find me in app/views/seller/products/index.html.erb</p>
+<% @products.each do |product| %>
+
+<div>
+    <%= image_tag product.get_image %>
+    <p>投稿ユーザー画像:<%= image_tag 'samle-author1.jpg' %></p>
+    <p>作品名:<%= product.name %></p>
+    <p>作品の説明:<%= product.description %></p>
+    <p>販売価格（税抜）：<%= product.price %></p>
+    <p>配送料：<%= product.shipping_cost %></p>
+    <p>小計：<%= total_price %></p>
+    <% total_price = product.proce + product.shipping_cost %>
+    
+</div>
+
+<% end %>

@@ -1,2 +1,8 @@
-<h1>Seller::Products#show</h1>
-<p>Find me in app/views/seller/products/show.html.erb</p>
+<h1>作品詳細</h1>
+
+<%= image_tag @product.get_image %>
+<p>作品名<%= @product.name %></p>
+<p>作品の説明<%= @product.description %></p>
+<p>販売価格（税抜）<%= @product.price %></p>
+<p>配送料<%= @product.shipping_cost %></p>
+<p>登録日:<%= @product.create_at.strftime('%Y/%m/%d') %></p>

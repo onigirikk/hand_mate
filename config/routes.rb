@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   namespace :seller do
-    get 'products/new'
-    get 'products/index'
-    get 'products/show'
+    resources :products, only: [:new, :show, :index, :create ,:edit , :update ,:destroy]
   end
   get 'homes/top'
   
